@@ -1,6 +1,6 @@
 from Utils.cep import valida_cep
 from Utils.data import valida_data_nascimento
-from Utils.funcoes_auxiliares import formata_texto,retorna_menu_principal
+from Utils.funcoes_auxiliares import formata_texto, retorna_menu_principal
 from Utils.valida_cpf import valida_cpf
 from Utils.valida_rg import valida_rg
 
@@ -8,8 +8,8 @@ clientes = []
 
 def main():
     validador = True
-    while(validador):
-        print("Seja bem vindo(a) ao sistema de gerenciamento de carteira de ações da Nuclea. Selecione uma das opções abaixo:")
+    while validador:
+        print("Seja bem vindo(a) ao sistema de gerenciamento de carteira de ações da N. Selecione uma das opções abaixo:")
         print("1 - Cadastrar cliente")
         print("2 - Cadastrar ação")
         print("3 - Realizar análise da carteira")
@@ -45,5 +45,5 @@ def main():
         else:
             print("Opção inválida. Tente novamente.")
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    print(main())

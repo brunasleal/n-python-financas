@@ -1,4 +1,7 @@
+import re
+
 import requests
+
 
 def busca_cep(cep):
     url = f"http://viacep.com.br/ws/{cep}/json/"
@@ -20,19 +23,19 @@ def busca_cep(cep):
 
 
 def valida_cep():
+    padrao_cep = r'(^[0-9]{5})-?([0-9]{3}$)'
+
     print("Consulta do CEP - ViaCEP")
 
     while True:
         cep_input = input("CEP: ")
+        retorno_cep = busca_cep(cep_input)
 
-        if cep_input.isdigit() and len(cep_input) == 8:
-            retorno_cep = busca_cep(cep_input)
-            if retorno_cep:
-                return retorno_cep
-            else:
-                print("CEP não encontrado ou inválido.")
-
+        if re.match(padrao_cep, cep_input):
+            return retorno_cep
+        else:
+            print("CPF inválido, digite novamente: ")
 
 
 if __name__ == "__main__":
-    valida_cep()
+    print(valida_cep())

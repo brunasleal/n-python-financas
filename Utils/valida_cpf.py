@@ -5,7 +5,7 @@ def valida_cpf():
     cpf_validador = CPF()
 
     while True:
-        cpf = input("CPF: ")
+        cpf = input("CPF (somente números): ")
         resultado_validacao = cpf_validador.validate(cpf)
 
         if(resultado_validacao):
